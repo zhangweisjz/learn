@@ -3,6 +3,7 @@ package com.example.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -10,6 +11,7 @@ import java.io.Serializable;
  */
 
 @Entity
+@Table(name = "test_book")
 public class Book implements Serializable{
     private static final long serialVersionUID = 8025948150436422040L;
     @Id
