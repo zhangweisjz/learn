@@ -69,4 +69,4 @@ nosetests.xml
 # This is usually scrapy cache folders
 .scrapy
 .vagrant
-/target/*
+target/
