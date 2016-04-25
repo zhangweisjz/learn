@@ -1,9 +1,6 @@
 package com.example.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -12,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "test_book")
-public class Book implements Serializable{
+public class Book implements Serializable {
     private static final long serialVersionUID = 8025948150436422040L;
     @Id
     long id;
@@ -25,6 +22,10 @@ public class Book implements Serializable{
 
     @Column(name = "price")
     long price;
+
+    @ManyToOne
+    @JoinColumn(name = "addressid")
+    private Address address;
 
     public long getId() {
         return id;
@@ -56,6 +57,14 @@ public class Book implements Serializable{
 
     public void setPrice(long price) {
         this.price = price;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
 
